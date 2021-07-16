@@ -77,14 +77,15 @@ Automation Script for creating single node _hadoop/spark/kafka/cassanda/mongodb_
       ##### $ source .bashrc
 
       ##### $ jps
-	11538 Jps
-	9716 DataNode
-	9942 SecondaryNameNode
-	10520 Master
-	9528 NameNode
-	10107 ResourceManager
-	10446 NodeManager
-	10750 Worker
+
+		11538 Jps
+		9716 DataNode
+		9942 SecondaryNameNode
+		10520 Master
+		9528 NameNode
+		10107 ResourceManager
+		10446 NodeManager
+		10750 Worker
 
 #### Restart your system & Start the services
 
