@@ -319,8 +319,6 @@ echo 'export PATH=$PATH:$CONFLUENT_HOME/bin' >> /home/vagrant/.bashrc
 
 echo 'export PYSPARK_PYTHON=python3.7'>>/home/vagrant/.bashrc
 
-source /home/vagrant/.bashrc
-source /home/vagrant/.bashrc
 echo $JAVA_HOME
 
 echo " Configuring ENVIRONMENT Variables Completed"
@@ -488,6 +486,5 @@ $HOME/bigdata/spark/bin/run-example SparkPi 10
 # $HOME/bigdata/spark/bin/spark-shell --master spark://master:7077
 
 cd ~
-source ~/.bashrc
 
 echo " Your environment is ready"
