@@ -266,7 +266,7 @@ rm confluent-community-6.2.0.tar.gz
 echo "Confluent Community Edition Extraction Completed "
 
 echo "Downloading & Installing Confluent Hub "
-cd $HOME/confluent/
+cd $HOME/bigdata/confluent/
 wget -q http://client.hub.confluent.io/confluent-hub-client-latest.tar.gz
 tar xf confluent-hub-client-latest.tar.gz
 rm confluent-hub-client-latest.tar.gz
