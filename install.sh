@@ -102,7 +102,8 @@ wget -q https://downloads.apache.org/hive/hive-2.3.9/apache-hive-2.3.9-bin.tar.g
 
 # Download Pig binaries
 echo "Dowloading Pig"
-wget -q http://www-us.apache.org/dist/pig/pig-0.16.0/pig-0.16.0.tar.gz
+wget -q https://downloads.apache.org/pig/pig-0.16.0/pig-0.16.0.tar.gz
+
 
 # Download Sqoop
 echo "Dowloading Sqoop"
