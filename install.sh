@@ -192,7 +192,7 @@ echo "HBase Extraction Started "
 tar -xf hbase-1.6.0-bin.tar.gz
 mv hbase-1.6.0 hbase
 rm hbase-1.6.0-bin.tar.gz
-#rm /home/vagrant/bigdata/hbase/lib/slf4j-log4j12-1.7.25.jar 
+#rm $HOME/bigdata/hbase/lib/slf4j-log4j12-1.7.25.jar 
 echo "HBase Extraction Completed "
 
 #===============================================================================================
@@ -266,59 +266,60 @@ rm confluent-community-6.2.0.tar.gz
 echo "Confluent Community Edition Extraction Completed "
 
 echo "Downloading & Installing Confluent Hub "
-cd /home/vagrant/bigdata/confluent/
+cd $HOME/confluent/
 wget -q http://client.hub.confluent.io/confluent-hub-client-latest.tar.gz
 tar xf confluent-hub-client-latest.tar.gz
 rm confluent-hub-client-latest.tar.gz
-cd /home/vagrant/bigdata/
+cd $HOME/bigdata/
 echo "Download & Installation of Confluent Hub completed"
 
 echo "Downloading & Installing Confluent CLI "
 # curl -L --http1.1 https://cnfl.io/cli | sh -s -- -b $CONFLUENT_HOME/bin
-cd /home/vagrant/
+cd $HOME/
 wget -q https://s3-us-west-2.amazonaws.com/confluent.cloud/confluent-cli/archives/latest/confluent_latest_linux_amd64.tar.gz
 tar xf confluent_latest_linux_amd64.tar.gz
-mv /home/vagrant/confluent/* /home/vagrant/bigdata/confluent/bin/
+mv $HOME/confluent/* $HOME/bigdata/confluent/bin/
 rm confluent_latest_linux_amd64.tar.gz
-cd /home/vagrant/bigdata/
+rm -rf $HOME/confluent
+cd $HOME/bigdata/
 echo "Download & Installation of Confluent CLI completed"
 
 echo " Configuring ENVIRONMENT Variables "
 # set env variables in .bashrc file
-echo 'export JAVA_HOME=/home/vagrant/bigdata/java' >> /home/vagrant/.bashrc
-echo 'export HADOOP_HOME=/home/vagrant/bigdata/hadoop' >> /home/vagrant/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin' >> /home/vagrant/.bashrc
-echo 'export HIVE_HOME=/home/vagrant/bigdata/hive' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$HIVE_HOME/bin' >> /home/vagrant/.bashrc
-echo 'export PIG_HOME=/home/vagrant/bigdata/pig' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$PIG_HOME/bin' >> /home/vagrant/.bashrc
-echo 'export SQOOP_HOME=/home/vagrant/bigdata/sqoop' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$SQOOP_HOME/bin' >> /home/vagrant/.bashrc
+echo 'export JAVA_HOME='$HOME'/bigdata/java' >>$HOME/.bashrc
+echo 'export HADOOP_HOME='$HOME'/bigdata/hadoop' >> $HOME/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin' >>$HOME/.bashrc
+echo 'export HIVE_HOME='$HOME'/bigdata/hive' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$HIVE_HOME/bin' >> $HOME/.bashrc
+echo 'export PIG_HOME='$HOME'/bigdata/pig' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$PIG_HOME/bin' >> $HOME/.bashrc
+echo 'export SQOOP_HOME='$HOME'/bigdata/sqoop' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$SQOOP_HOME/bin' >> $HOME/.bashrc
 
 # set env variables for Hbase
-echo 'export HBASE_HOME=/home/vagrant/bigdata/hbase'>> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$HBASE_HOME/bin'>>/home/vagrant/.bashrc
+echo 'export HBASE_HOME='$HOME'/bigdata/hbase'>>$HOME/.bashrc
+echo 'export PATH=$PATH:$HBASE_HOME/bin'>>$HOME/.bashrc
 
-echo 'export SCALA_HOME=/home/vagrant/bigdata/scala' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$SCALA_HOME/bin' >> /home/vagrant/.bashrc
-echo 'export SPARK_HOME=/home/vagrant/bigdata/spark' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin' >> /home/vagrant/.bashrc
-echo 'export SBT_HOME=/home/vagrant/bigdata/sbt' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$SBT_HOME/bin' >> /home/vagrant/.bashrc
+echo 'export SCALA_HOME='$HOME'/bigdata/scala' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$SCALA_HOME/bin' >> $HOME/.bashrc
+echo 'export SPARK_HOME='$HOME'/bigdata/spark' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin' >>$HOME/.bashrc
+echo 'export SBT_HOME='$HOME'/bigdata/sbt' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$SBT_HOME/bin' >> $HOME/.bashrc
 
-echo 'export KAFKA_HOME=/home/vagrant/bigdata/kafka' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$KAFKA_HOME/bin' >> /home/vagrant/.bashrc
+echo 'export KAFKA_HOME='$HOME'/bigdata/kafka' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$KAFKA_HOME/bin' >> $HOME/.bashrc
 
-echo 'export CASSANDRA_HOME=/home/vagrant/bigdata/cassandra' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$CASSANDRA_HOME/bin' >> /home/vagrant/.bashrc
+echo 'export CASSANDRA_HOME='$HOME'/bigdata/cassandra' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$CASSANDRA_HOME/bin' >>$HOME/.bashrc
 
-echo 'export MONGODB_HOME=/home/vagrant/bigdata/mongodb' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$MONGODB_HOME/bin' >> /home/vagrant/.bashrc
+echo 'export MONGODB_HOME='$HOME'/bigdata/mongodb' >> $HOME/.bashrc
+echo 'export PATH=$PATH:$MONGODB_HOME/bin' >> $HOME/.bashrc
 
-echo 'export CONFLUENT_HOME=/home/vagrant/bigdata/confluent' >> /home/vagrant/.bashrc
-echo 'export PATH=$PATH:$CONFLUENT_HOME/bin' >> /home/vagrant/.bashrc
+echo 'export CONFLUENT_HOME='$HOME'/bigdata/confluent' >>$HOME/.bashrc
+echo 'export PATH=$PATH:$CONFLUENT_HOME/bin' >> $HOME/.bashrc
 
-echo 'export PYSPARK_PYTHON=python3.7'>>/home/vagrant/.bashrc
+echo 'export PYSPARK_PYTHON=python3.7'>>$HOME/.bashrc
 
 echo $JAVA_HOME
 
@@ -331,7 +332,7 @@ echo " ------------- Copy Hadoop configuraton files -----------------"
 echo 'export JAVA_HOME='$HOME'/bigdata/java' >> $HOME/bigdata/hadoop/etc/hadoop/hadoop-env.sh
 
 # copy hadoop configuraton files from host to the guest VM
-#By default, Vagrant will share your project directory (the directory with the Vagrantfile) to /vagrant
+
 
 cd $HOME/hadoop_light_cloud
 
